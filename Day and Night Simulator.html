@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day and Night Simulator</title>
+
+    <style>
+        body {
+            background: #87ceeb;
+            text-align: center;
+            font-family: Arial;
+            color: white;
+            padding-top: 30px;
+            transition: 1s;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        #sky {
+            width: 85%;
+            height: 350px;
+            margin: 30px auto;
+            border-radius: 20px;
+            background: linear-gradient(#45b5ed, #b5e9ff);
+            position: relative;
+            overflow: hidden;
+            transition: 1s;
+        }
+
+        #sun, #moon {
+            font-size: 90px;
+            position: absolute;
+            top: 50px;
+            left: 40%;
+            transition: 1s;
+        }
+
+        #moon {
+            display: none;
+        }
+
+        #stars {
+            display: none;
+            font-size: 25px;
+        }
+
+        .star {
+            position: absolute;
+        }
+
+        .cloud {
+            position: absolute;
+            font-size: 60px;
+            top: 170px;
+        }
+
+        .cloud1 { left: 10%; }
+        .cloud2 { right: 10%; }
+
+        button {
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .day { background: orange; }
+        .night { background: #222; color: white; }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>🌍 DAY AND NIGHT SIMULATOR</h1>
+
+    <h2 id="status">GOOD MORNING ☀️</h2>
+
+    <div id="sky">
+
+        <div id="sun">☀️</div>
+
+        <div id="moon">🌙</div>
+
+        <div class="cloud cloud1">☁️</div>
+        <div class="cloud cloud2">☁️</div>
+
+        <div id="stars">
+            <span class="star" style="top:20px;left:20%">⭐</span>
+            <span class="star" style="top:100px;left:70%">✨</span>
+            <span class="star" style="top:180px;left:40%">⭐</span>
+            <span class="star" style="top:50px;left:85%">✨</span>
+        </div>
+
+    </div>
+
+    <button class="day" onclick="dayMode()">DAY MODE ☀️</button>
+
+    <button class="night" onclick="nightMode()">NIGHT MODE 🌙</button>
+
+    <script>
+
+        function dayMode() {
+
+            document.getElementById("sky").style.background =
+                "linear-gradient(#45b5ed, #b5e9ff)";
+
+            document.getElementById("sun").style.display = "block";
+
+            document.getElementById("moon").style.display = "none";
+
+            document.getElementById("stars").style.display = "none";
+
+            document.getElementById("status").innerText =
+                "GOOD MORNING ☀️";
+
+        }
+
+        function nightMode() {
+
+            document.getElementById("sky").style.background =
+                "linear-gradient(#06142e, #18264c)";
+
+            document.getElementById("sun").style.display = "none";
+
+            document.getElementById("moon").style.display = "block";
+
+            document.getElementById("stars").style.display = "block";
+
+            document.getElementById("status").innerText =
+                "GOOD NIGHT 🌙";
+
+        }
+
+    </script>
+
+</body>
+</html>
